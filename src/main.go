@@ -2,7 +2,23 @@ package main
 
 import "fmt"
 
+func funcionNormal(message string) {
+	fmt.Println(message)
+}
+
+func returnValue(a, b int) int {
+	return a * b
+}
+
+func doubleReturnFunc(a int) (c, d int) {
+	return a, a * 2
+}
+
 func main() {
+	value3, value4 := doubleReturnFunc(2)
+	fmt.Println("valores: ", value3, value4)
+	fmt.Println(returnValue(1, 3))
+	funcionNormal("Hola Mundo")
 	//Declaracion de constantes
 	const pi float64 = 3.14
 	const pi2 = 3.1415
@@ -52,5 +68,28 @@ func main() {
 	areaTrapecio := ((baseUno + baseDos) * alturaTrapecio) / 2
 
 	fmt.Println("El Area del Trapecio es :", areaTrapecio)
+
+	helloMessage := "Hello"
+	worldMessage := "world"
+
+	// Println: Salto de Linea Automatico
+	fmt.Println(helloMessage, worldMessage)
+	fmt.Println(helloMessage, worldMessage)
+
+	// Printf
+	nombre := "Platzi"
+	cursos := 500
+	// Con valores seguros
+	fmt.Printf("%s tiene más de %d cursos\n", nombre, cursos)
+	// Con valores inseguros
+	fmt.Printf("%v tiene más de %v cursos\n", nombre, cursos)
+
+	// Sprintf
+	message := fmt.Sprintf("%v tiene más de %v cursos\n", nombre, cursos)
+	fmt.Println(message)
+
+	// Tipo de datos:
+	fmt.Printf("helloMessage: %T\n", helloMessage)
+	fmt.Printf("cursos: %T\n", cursos)
 
 }
