@@ -92,4 +92,21 @@ func main() {
 	fmt.Printf("helloMessage: %T\n", helloMessage)
 	fmt.Printf("cursos: %T\n", cursos)
 
+	//MAPS
+	m := make(map[string]int)
+
+	m["Jose"] = 14
+	m["Juan"] = 15
+
+	fmt.Println(m)
+
+	//Recorrer map
+	for i, v := range m {
+		fmt.Println(i, v)
+	}
+
+	//Encontrar valor
+	value, ok := m["Juan2"]
+	fmt.Println(value, ok)
+
 }
