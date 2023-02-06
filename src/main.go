@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"log"
+	"strconv"
+)
 
 func funcionNormal(message string) {
 	fmt.Println(message)
@@ -92,6 +96,33 @@ func main() {
 	fmt.Printf("helloMessage: %T\n", helloMessage)
 	fmt.Printf("cursos: %T\n", cursos)
 
+	//If
+	valor1 := 1
+	valor2 := 2
+
+	if valor1 == 1 {
+		fmt.Println("Es 1")
+	} else {
+		fmt.Println("es 2")
+	}
+
+	//With and
+	if valor1 == 1 && valor2 == 2 {
+		fmt.Println("Es verdad")
+	}
+
+	//With or
+	if valor1 == 0 || valor2 == 1 {
+		fmt.Println("Es verdad")
+	}
+
+	//convertir texto a numero
+	value, error := strconv.Atoi("53")
+	if error != nil {
+		log.Fatal(error)
+	}
+	fmt.Println(value)
+
 	//MAPS
 	m := make(map[string]int)
 
@@ -106,7 +137,7 @@ func main() {
 	}
 
 	//Encontrar valor
-	value, ok := m["Juan2"]
+	value, ok := m["Juan"]
 	fmt.Println(value, ok)
 
 }
